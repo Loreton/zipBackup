@@ -1,0 +1,1473 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"py",
+				"pyBinDir"
+			],
+			[
+				"max",
+				"max_files"
+			],
+			[
+				"inp",
+				"inpArgs"
+			],
+			[
+				"Pa",
+				"ParseInput"
+			],
+			[
+				"__",
+				"__name__ == '__main__':〔variable〕"
+			],
+			[
+				"cu",
+				"curr_dir"
+			],
+			[
+				"rotatio",
+				"rotation_filesize"
+			],
+			[
+				"rot",
+				"rotation_nfiles"
+			],
+			[
+				"log",
+				"logArgs"
+			],
+			[
+				"_log",
+				"_log_time"
+			],
+			[
+				"now",
+				"now_date"
+			],
+			[
+				"pkg",
+				"pkg_len"
+			],
+			[
+				"tra",
+				"set_trace〔function〕"
+			],
+			[
+				"_get",
+				"_getCaller〔function〕"
+			],
+			[
+				"type",
+				"types"
+			],
+			[
+				"foun",
+				"found_dir"
+			],
+			[
+				"_rotat",
+				"_rotation_max_file_size"
+			],
+			[
+				"_ro",
+				"_rotation_max_files"
+			],
+			[
+				"sel",
+				"self._filename"
+			],
+			[
+				"_file",
+				"_file_dest"
+			],
+			[
+				"targ",
+				"targetDir"
+			],
+			[
+				"tag",
+				"targetDir"
+			],
+			[
+				"consol",
+				"console_prefix"
+			],
+			[
+				"to",
+				"to_console"
+			],
+			[
+				"rea",
+				"reason"
+			],
+			[
+				"aut",
+				"auth_list"
+			],
+			[
+				"_alias",
+				"_alias_name"
+			],
+			[
+				"self",
+				"self._alias_exec"
+			],
+			[
+				"name",
+				"namespace"
+			],
+			[
+				"nam",
+				"namespace"
+			],
+			[
+				"ip_",
+				"ip_addresses"
+			],
+			[
+				"this",
+				"this_primary_IP"
+			],
+			[
+				"remote",
+				"remote_port"
+			],
+			[
+				"_",
+				"_primary_IP"
+			],
+			[
+				"_pri",
+				"_private_key_file"
+			],
+			[
+				"_pr",
+				"_private_key_file"
+			],
+			[
+				"split",
+				"splitText"
+			],
+			[
+				"spli",
+				"split_lines"
+			],
+			[
+				"get",
+				"gethostbyaddr"
+			],
+			[
+				"ipadd",
+				"ipaddrlist"
+			],
+			[
+				"remo",
+				"remote_reverse_port"
+			],
+			[
+				"debu",
+				"debug3"
+			],
+			[
+				"valid",
+				"valid_lines"
+			],
+			[
+				"exec",
+				"exec_Command"
+			],
+			[
+				"she",
+				"shellRun"
+			],
+			[
+				"ip",
+				"ip_address"
+			],
+			[
+				"ssh",
+				"sshRun"
+			],
+			[
+				"exit",
+				"exit_on_error"
+			],
+			[
+				"line",
+				"lineNumber"
+			],
+			[
+				"s",
+				"set_trace〔function〕"
+			],
+			[
+				"level",
+				"levels"
+			],
+			[
+				"pdb",
+				"pdb.set_trace"
+			],
+			[
+				"ss",
+				"ssh2_class"
+			],
+			[
+				"conne",
+				"conn_timeout"
+			],
+			[
+				"inter",
+				"internal_ip_addresses〔variable〕"
+			],
+			[
+				"ex",
+				"external_hostname"
+			],
+			[
+				"sess",
+				"session_name〔variable〕"
+			],
+			[
+				"pri",
+				"private_key_file"
+			],
+			[
+				"remot",
+				"remoteIP〔variable〕"
+			],
+			[
+				"host",
+				"hostname"
+			],
+			[
+				"acco",
+				"accout_password"
+			],
+			[
+				"accou",
+				"account_name"
+			],
+			[
+				"mail",
+				"mailData〔argument〕"
+			],
+			[
+				"yam",
+				"yaml_data"
+			],
+			[
+				"dict",
+				"dictToFile〔function〕"
+			],
+			[
+				"attache",
+				"attached_files"
+			],
+			[
+				"sm",
+				"smtp.gmail.com"
+			],
+			[
+				"REM",
+				"REMOTE_CHECK_CMD"
+			],
+			[
+				"crypt",
+				"crypto"
+			],
+			[
+				"my",
+				"my_pw"
+			],
+			[
+				"md",
+				"md5_val〔variable〕"
+			],
+			[
+				"has",
+				"hasattr〔function〕"
+			],
+			[
+				"source",
+				"source_dir〔argument〕"
+			],
+			[
+				"return",
+				"returncode"
+			],
+			[
+				"cre",
+				"create_7zip〔function〕"
+			],
+			[
+				"recu",
+				"recursive"
+			],
+			[
+				"run",
+				"runCommand〔function〕"
+			],
+			[
+				"_dir",
+				"_dir2zip"
+			],
+			[
+				"dest",
+				"dest_dir"
+			],
+			[
+				"Pars",
+				"ParseInput〔function〕"
+			],
+			[
+				"sub",
+				"sub_dirs〔variable〕"
+			],
+			[
+				"hash",
+				"hashlib〔module〕"
+			],
+			[
+				"exe",
+				"executeCommand〔function〕"
+			],
+			[
+				"coma",
+				"command〔argument〕"
+			],
+			[
+				"zip",
+				"zipFile"
+			],
+			[
+				"dir",
+				"dir_name"
+			],
+			[
+				"is",
+				"isdir〔function〕"
+			],
+			[
+				"excl",
+				"exclude_list"
+			],
+			[
+				"exc",
+				"exclude_list〔variable〕"
+			],
+			[
+				"ext",
+				"extensions"
+			],
+			[
+				"B",
+				"BASE_CMD"
+			],
+			[
+				"process",
+				"processVideo"
+			],
+			[
+				"L",
+				"LnPrompt〔module〕"
+			],
+			[
+				"mp",
+				"mpoint"
+			],
+			[
+				"g",
+				"greenH"
+			],
+			[
+				"req",
+				"req_device_name〔variable〕"
+			],
+			[
+				"device",
+				"device_list〔argument〕"
+			],
+			[
+				"config",
+				"config_dev〔variable〕"
+			],
+			[
+				"confi",
+				"config_dev〔variable〕"
+			],
+			[
+				"mount",
+				"mountpoint"
+			],
+			[
+				"real",
+				"real_dir"
+			],
+			[
+				"devi",
+				"device_found〔variable〕"
+			],
+			[
+				"moun",
+				"mount_point〔variable〕"
+			],
+			[
+				"convert",
+				"convert_bytes〔module〕"
+			],
+			[
+				"devic",
+				"device_data〔variable〕"
+			],
+			[
+				"stri",
+				"strip_field"
+			],
+			[
+				"prj",
+				"prj_name〔variable〕"
+			],
+			[
+				"base",
+				"base_dir"
+			],
+			[
+				"COMM",
+				"COMMIT_0"
+			],
+			[
+				"file",
+				"filename〔argument〕"
+			],
+			[
+				"ba",
+				"baseConfig"
+			],
+			[
+				"f",
+				"fEXECUTE"
+			],
+			[
+				"set",
+				"setLogger"
+			],
+			[
+				"Ln",
+				"LnLogger"
+			],
+			[
+				"LnL",
+				"LnLib"
+			],
+			[
+				"colo",
+				"color_name〔argument〕"
+			],
+			[
+				"common",
+				"common_options"
+			],
+			[
+				"ski",
+				"skip_field〔argument〕"
+			],
+			[
+				"singl",
+				"single_line"
+			],
+			[
+				"rege",
+				"regex_OR〔function〕"
+			],
+			[
+				"book",
+				"bookid_list〔variable〕"
+			],
+			[
+				"boo",
+				"book_list〔argument〕"
+			],
+			[
+				"contetn",
+				"content_word"
+			],
+			[
+				"_word",
+				"_word2〔variable〕"
+			],
+			[
+				"recor",
+				"records〔variable〕"
+			],
+			[
+				"book_",
+				"book_list〔variable〕"
+			],
+			[
+				"menu",
+				"menu_data〔function〕"
+			],
+			[
+				"near",
+				"near_str"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/__main__.py",
+			"settings":
+			{
+				"buffer_size": 1699,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source/ParseInput.py",
+			"settings":
+			{
+				"buffer_size": 2503,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ren",
+				"File: Rename"
+			],
+			[
+				"du",
+				"File: Duplicate"
+			],
+			[
+				"dup",
+				"File: Duplicate"
+			],
+			[
+				"clip",
+				"Text Pastry: Show Clipboard Viewer"
+			],
+			[
+				"rene",
+				"Rename File"
+			],
+			[
+				"sort",
+				"Sort Lines by Selection"
+			],
+			[
+				"comp",
+				"Compare with..."
+			],
+			[
+				"dupli",
+				"File: Duplicate"
+			],
+			[
+				"compa",
+				"Compare with..."
+			],
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"rename",
+				"Rename File"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"renam",
+				"File: Rename"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdo",
+				"Preferences: MarkdownEditing Settings – Default"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"del",
+				"File: Delete"
+			],
+			[
+				"inc",
+				"Increment Selection"
+			],
+			[
+				"in",
+				"Increment Selection"
+			],
+			[
+				"incre",
+				"Increment Selection"
+			],
+			[
+				"i",
+				"Increment Selection"
+			],
+			[
+				"dele",
+				"File: Delete"
+			],
+			[
+				"re",
+				"File: Rename"
+			],
+			[
+				"json",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"syn",
+				"Side Bar: Enable Syncing"
+			],
+			[
+				"color hi",
+				"Color Scheme Editor: Goto next matching scope"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"them",
+				"UI: Select Theme"
+			],
+			[
+				"pvr",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"box",
+				"Boxy Theme: Configuration"
+			],
+			[
+				"boxy",
+				"Boxy Theme: Preferences"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"color",
+				"Color Scheme Editor: Goto next matching scope"
+			],
+			[
+				"vrc",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"case",
+				"Convert Case: Title Case"
+			],
+			[
+				"git",
+				"GitHub: Open Starred Gist in Editor"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"jnj",
+				"Set Syntax: Jinja2"
+			],
+			[
+				"anaco",
+				"Anaconda: Vagrant Status"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"anaconda",
+				"Anaconda: Goto object definition"
+			],
+			[
+				"anaconda sho",
+				"Anaconda: Show error list"
+			],
+			[
+				"insal",
+				"Package Control: Install Package"
+			],
+			[
+				"instak",
+				"Package Control: Install Package"
+			],
+			[
+				"ana",
+				"Anaconda: McCabe complexity check"
+			],
+			[
+				"anaconda sh",
+				"Anaconda: Show error list"
+			],
+			[
+				"goto",
+				"Anaconda: Goto object definition"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"de",
+				"File: Delete"
+			],
+			[
+				"todo",
+				"TodoReview: Project Files"
+			],
+			[
+				"incr",
+				"Increment Selection"
+			],
+			[
+				"sftp",
+				"SFTP: Edit Remote Mapping…"
+			],
+			[
+				"sft",
+				"SFTP: Browse Server…"
+			],
+			[
+				"tod",
+				"TodoReview: Open Files"
+			],
+			[
+				"match",
+				"BracketHighlighter: Find Matching Offscreen Bracket"
+			]
+		],
+		"width": 476.0
+	},
+	"console":
+	{
+		"height": 249.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/.sublime",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source"
+	],
+	"file_history":
+	[
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source/runCommand.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source/create_zip.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source/create_7z.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source/getPassword.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source/ParseInput.py",
+		"/X/home/pi/GIT-REPO/gitUtils/lcommit",
+		"/X/home/pi/GIT-REPO/gitUtils/lzip_build",
+		"/K/Filu/LnDisk/LnFree/SynchBackup/FreeFileSync/LnFreeFileSync.sh",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/__main__.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/pyScript/.git/config",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnLib/.git/config",
+		"/K/Filu/LnDisk/GIT-REPO/Scripts/Bash/zip_directory.sh",
+		"/X/home/pi/GIT-REPO/gitUtils/lbuild",
+		"/X/home/pi/GIT-REPO/Python/pyScript/.git/config",
+		"/X/home/pi/GIT-REPO/gitUtils/lzip",
+		"/X/home/pi/GIT-REPO/Python/LnLib/.git/config",
+		"/X/home/pi/GIT-REPO/Python/LnLib/monkeyFunctions/LnMonkeyFunctions.py",
+		"/X/home/pi/GIT-REPO/Python/LnLib/rotateFile/Source/rotateFile.py",
+		"/X/home/pi/GIT-REPO/gitUtils/lcommit.dat",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/rotateFile/__main__.py",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/rotateFile/Source/rotateFile.py",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/.git/config",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/rotateFile/LnLib/LnColor.py",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/rotateFile/Source/ParseInput.py",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/rotateFile/__main___001.py",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/rotateFile/LnLib/colorLn/LnColor.py",
+		"/X/home/pi/GIT-REPO/Python/pythonLnLib/mailLn/Mail_Parametrizzata.py",
+		"/X/GIT-REPO/Python/pythonLnLib/pyScript/rotateFile.py",
+		"/X/GIT-REPO/Python/pythonLnLib/.git/config",
+		"/X/GIT-REPO/gitUtils/lcommit.dat",
+		"/X/GIT-REPO/Python/pythonLnLib/pyScript/ssh_remote_tunnel.py",
+		"/X/GIT-REPO/Python/pythonLnLib/monkeyFunctions/LnMonkeyFunctions.py",
+		"/X/GIT-REPO/gitUtils/lcommit",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/LnLib/LnLogger.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/Source/ParseInput.py",
+		"/X/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/nameSpace.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/LnLib/ssh2_class.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/__main__.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/LnLib/LnMonkeyFunctions.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnPythonLib/LnMonkeyFunctions/LnMonkeyFunctions.py",
+		"/X/home/pi/GIT-REPO/Python/LnPythonLib_2020_06/Logger/LnLogger.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnPythonLib_2020_06/Logger/LnLogger_V2018-06.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/conf/sshReverseTunnel.yml",
+		"/X/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/splitString.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/Source/ssh2_class.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/LnLib/run_sh_command.py",
+		"/X/home/pi/GIT-REPO/Python/LnPythonLib/LnColor/LnColor.py",
+		"/X/home/pi/GIT-REPO/Python/LnPythonLib_2020_06/SSH/LnSSH_Class.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/Source/ssh2_runCommand.py",
+		"/X/home/pi/GIT-REPO/Python/LnPythonLib/LnLogger/nullLogger.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/LnLib/sh_command.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnPythonLib/LnPyUtils/sh_command.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnPythonLib/LnPyUtils/run_sh.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/ssh_Reverse_tunnel.sh",
+		"/X/home/pi/GIT-REPO/Python/PyMount/Source/ParseInput.py",
+		"/X/home/pi/GIT-REPO/Python/sshRemoteTunnel/.git/config",
+		"/K/Filu/LnDisk/LnStart/LnToDo.ini",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnPythonLib/.git/config",
+		"/X/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/__main__.py",
+		"/K/Filu/LnDisk/GIT-REPO/LnDOC/IFTTT/Create Widget.txt",
+		"/X/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/Source/ssh2_runCommand.py",
+		"/X/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/conf/pySSH.yml",
+		"/X/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/Source/ParseInput.py",
+		"/X/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/toYaml.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp19818/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/__main__.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp25581/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/ssh_Reverse_tunnel.sh",
+		"/C/Users/Loreto/AppData/Local/Temp/scp49127/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/LnLib/ReadConfigurationFile.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp43409/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/Source/ParseInput.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp48679/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/ReadConfigurationFile.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp42502/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/lzip",
+		"/C/Users/Loreto/AppData/Local/Temp/scp24435/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/pySSH.yml",
+		"/C/Users/Loreto/AppData/Local/Temp/scp28478/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp42267/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/lcommit",
+		"/C/Users/Loreto/AppData/Local/Temp/scp49343/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/PiProd/shProc/moveCameraFiles.sh",
+		"/C/Users/Loreto/AppData/Local/Temp/scp36497/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/ParseInput.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp48993/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/PyMount/bin/PyMount.zip",
+		"/C/Users/Loreto/AppData/Local/Temp/scp14514/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/PyMount/conf/LnMount.yml",
+		"/C/Users/Loreto/AppData/Local/Temp/scp33542/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/PyMount/__main__.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp34175/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/PyMount/Source/DeviceList.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp36791/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/splitString.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp34245/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/bytesToHuman.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp22337/HOME-LnPi31B-LnPi31B-192.168.1.31/etc/pure-ftpd/conf/ChrootEveryone",
+		"/C/Users/Loreto/AppData/Local/Temp/scp22540/HOME-LnPi31B-LnPi31B-192.168.1.31/etc/pure-ftpd/conf/FSCharset",
+		"/C/Users/Loreto/AppData/Local/Temp/scp22543/HOME-LnPi31B-LnPi31B-192.168.1.31/etc/pure-ftpd/conf/PureDB",
+		"/C/Users/Loreto/AppData/Local/Temp/scp22525/HOME-LnPi31B-LnPi31B-192.168.1.31/etc/pure-ftpd/pureftpd-dir-aliases",
+		"/C/Users/Loreto/AppData/Local/Temp/scp22006/HOME-LnPi31B-LnPi31B-192.168.1.31/etc/pure-ftpd/pureftpd.pdb",
+		"/C/Users/Loreto/AppData/Local/Temp/scp21009/HOME-LnPi31B-LnPi31B-192.168.1.31/etc/pure-ftpd/pure-ftpd.conf",
+		"/C/Users/Loreto/AppData/Local/Temp/scp10540/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/Examples/example_01.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp20486/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/PiProd/shProc/ssh_Reverse_tunnel.sh",
+		"/C/Users/Loreto/AppData/Local/Temp/scp40178/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/pySSHRemoteTunnel/ssh_Reverse_tunnel.sh",
+		"/C/Users/Loreto/AppData/Local/Temp/scp52240/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/RepositoryStatus.yml",
+		"/K/Filu/LnDisk/GIT-REPO/LnDOC/SSH/SSH_timeout.yml",
+		"/K/Filu/LnDisk/GIT-REPO/LnDOC/SSH/scripts/SSH_SendKey_New.cmd",
+		"/K/Filu/LnDisk/GIT-REPO/LnDOC/SSH/SSH_SendKey.txt",
+		"/K/Filu/LnDisk/GIT-REPO/LnDOC/SSH/scripts/SSH-Tunnel_Sample.cmd",
+		"/K/Filu/LnDisk/LnFree/Network/Telnet/Kitty/Sessions/LnPi31B/LnPi31B%20-%20192.168.1.31",
+		"/C/Users/Loreto/.ssh/config",
+		"/K/Filu/LnDisk/GIT-REPO/gitUtils/lcommit.dat",
+		"/K/Filu/LnDisk/GIT-REPO/gitUtils/.git/config",
+		"/K/Filu/LnDisk/GIT-REPO/gitUtils/lcommit",
+		"/K/Filu/LnDisk/GIT-REPO/gitUtils/RepositoryStatus.yml",
+		"/K/Filu/LnDisk/GIT-REPO/gitUtils/Working_on.yml",
+		"/K/Filu/LnDisk/GIT-REPO/LnDOC/.git/config",
+		"/K/Filu/LnDisk/GIT-REPO/@LnDOC/.git/config",
+		"/C/Users/Loreto/AppData/Local/Temp/scp35432/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/lcommit",
+		"/C/Users/Loreto/AppData/Local/Temp/scp37349/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/.git/config",
+		"/C/Users/Loreto/AppData/Local/Temp/scp34709/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/RepositoryStatus.txt",
+		"/C/Users/Loreto/AppData/Local/Temp/scp38167/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/.git/config",
+		"/C/Users/Loreto/AppData/Local/Temp/scp47742/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnMail/Mail_Parametrizzata.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp47331/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnMail/sample_attached.txt",
+		"/C/Users/Loreto/AppData/Local/Temp/scp39730/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/PyMount/.git/config",
+		"/C/Users/Loreto/AppData/Local/Temp/scp48000/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/LnReadMe.txt",
+		"/C/Users/Loreto/AppData/Local/Temp/scp18044/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/pyScript/send_gmail.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp29818/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnMail/Mail_Parametrizzata.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp37828/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/pyScript/send_mail.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp39238/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/toDict.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp39526/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/toJson.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp22511/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/writeFile.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp22180/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/toYaml.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp23694/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnPyUtils/readFile.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp47972/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput_Positional_V1.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp12008/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput_04_checkFunc.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp42379/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput_Positional_V3.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp45083/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput_template4.py",
+		"/K/Filu/LnDisk/GIT-REPO/Scripts/Python/Sources/zip_Backup/__main__.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp48267/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput_03_Groups.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp42261/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput_Positional_V2.py",
+		"/C/Users/Loreto/AppData/Local/Temp/scp42362/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnParseInput/ParseInput.py"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 169.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"inp_args",
+			"fCRYPT",
+			"fDEBUG",
+			"fEXECUTE",
+			"excludeList",
+			"check_dir",
+			"LnPythonLib",
+			"createZipFile",
+			"reqBUILD",
+			"createZipFile",
+			"LnLib",
+			"_targetCol",
+			"_sourceCol",
+			"'all'",
+			"build",
+			"createZipFile",
+			"zip",
+			"git_commit",
+			"reqPUSH",
+			"reqGO",
+			"self._rotation_max_files",
+			"self._rotation_max_file_size",
+			"_rotation_max_file_size",
+			"logg",
+			"Logg",
+			"logg",
+			"Logg",
+			"logg",
+			"SimpleNamespace",
+			"logArgs",
+			"self._log_num_level",
+			"logg.level",
+			"self._fullpath_module",
+			"self._log",
+			"self._log_time",
+			"self._log_date",
+			"self._log",
+			"_date_time_format",
+			"self._log_level",
+			"full_name_module",
+			"inpArgs.log_",
+			"fCONSOLE",
+			"_date_time_format",
+			"_getCaller",
+			"dict",
+			"self._ifc",
+			"self._primary_IP",
+			"_primary_IP",
+			"getDefaultGW",
+			"comment",
+			"getReqDirPath",
+			"found_dir",
+			"checkInput",
+			"getReqDirPath",
+			"exit",
+			"getReqDirPath",
+			"self._alias",
+			"{self._alias}",
+			"len(",
+			"len",
+			"getInterfaceIpAddr",
+			"exec_Command",
+			"shellRun",
+			"exec_Command",
+			"getInterfaceIpAddr",
+			"nullLogger",
+			"LnPathCopy",
+			"LnPathRotate",
+			"LnClass",
+			"LnPathRotate",
+			"copy",
+			"LnPathRotate",
+			"set_level",
+			"self._console",
+			"CONSOLE",
+			"my_tunnel_",
+			"my_tun",
+			"setAlias",
+			"self.logger",
+			"self._alias",
+			"getDefaultGW",
+			"set_trace()",
+			"splitText",
+			"getDefaultGW",
+			"ip route",
+			"internalIpAddress",
+			"default_ip_address",
+			"_I_am_local",
+			"default_ip_address",
+			"get_default_ip_address",
+			"getInterfaceIpAddr",
+			"internalIpAddress",
+			"_primary_IP",
+			"gethos",
+			"remote_reverse_port",
+			"_internal_ip",
+			"_private_key_file",
+			"startReverseTunnel",
+			"exec_Command",
+			"shellRun",
+			"exec_Command",
+			"exec_Command(cmd=",
+			"(cmd=",
+			"cmd=",
+			"cdm",
+			"split_lines",
+			"outpupt",
+			"exec_Command",
+			"getInterfaceIpAddr",
+			"getInterfaceIpAddr_V01",
+			"_alias_exec",
+			"ipaddress.ip_address(self._address).is_loopbac",
+			"ipaddress",
+			"IpAddress",
+			"ipaddress",
+			"exec_Command",
+			"get_default_ip_address",
+			"exec_Command",
+			"shellRun",
+			"_alias_exec",
+			"getInterfaceIpAddr_V02",
+			"get_default_ip_address",
+			"getInterfaceIpAddr_V01",
+			"getInterfaceIpAddr",
+			"get_default_ip_address",
+			"getInterfaceIpAddr",
+			"internalIpAddress_V2",
+			"set_trace"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/__main__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								590,
+								590
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 22,
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/K/Filu/LnDisk/GIT-REPO/Python/pyScript/zip_Backup/Source/ParseInput.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2503,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								135,
+								135
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"function_name_status_row": 7,
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 59.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 130.0
+	},
+	"pinned_build_system": "",
+	"project": "zip_Backup.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 139.0,
+		"last_filter": "vi",
+		"selected_items":
+		[
+			[
+				"vi",
+				"viewitems"
+			],
+			[
+				"",
+				"__getitem__"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
