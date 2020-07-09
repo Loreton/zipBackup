@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # updated by ...: Loreto Notarantonio
-# Version ......: 06-07-2020 19.49.37
+# Version ......: 09-07-2020 09.19.25
 #
 
 import sys, os; sys.dont_write_bytecode = False
@@ -12,7 +12,6 @@ import sys, os; sys.dont_write_bytecode = False
 # import pdb
 # import json
 # import hashlib
-# from pathlib import Path
 
 # value=hashlib.md5(b'string').hexdigest()
 myMD5='e925a6f02ff738b7a780b9592bae0af8' # see LP [LnZip Backup Directory]
