@@ -1,0 +1,19 @@
+# il mointpoint se non definito o nullo viene
+# creato dinamicamente con Label+PARTUUID
+
+VARS:
+    # value=hashlib.md5(b'string').hexdigest()
+    myMD5:      'e925a6f02ff738b7a780b9592bae0af8' # see LP [LnZip Backup Directory]
+    myMD5_test: '098f6bcd4621d373cade4e832627b4f6'
+    myMD5_ciao: '6e6bc4e49dd477ebc98ef4046c067b5f'
+
+Loreto:
+    root_dir    : /mnt/k/Filu/LnDisk/Loreto
+    target_dir  : /mnt/c/Filu_C/LnDisk/Loreto
+    single_file : false
+    crypt       : false
+    md5         : myMD5 # entry_name  of VARS section
+    sub_dirs    : ["*"]
+    include     : ["**/*"]
+    exclude     : ['sync.ffs_db']
+
