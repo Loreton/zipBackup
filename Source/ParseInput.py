@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # updated by ...: Loreto Notarantonio
-# Version ......: 12-07-2020 19.44.37
+# Version ......: 13-07-2020 15.24.27
 #
 
 # https://pymotw.com/3/argparse # molto interessante
@@ -12,7 +12,7 @@ import os
 import pdb; # https://docs.python.org/3/library/pdb.html
 import json
 import argparse
-import types
+# import types
 
 
 
@@ -42,7 +42,20 @@ def common_options(subparsers):
         subp.add_argument('--display-args', action='store_true', help='Display input paramenters')
         subp.add_argument('--debug', action='store_true', help='display paths and input args')
         subp.add_argument('--log', action='store_true', help='Activate log.')
+        subp.add_argument('--log-level', type=str, default='info', choices=['critical','error','warning','info','debug1','debug2','debug3'], help='specify log level.')
         subp.add_argument('--log-console', action='store_true', help='Activate log and write to console too.')
+
+        subp.add_argument('-log-disp-date', action='store_false', help='NO date in log entry.')
+        subp.add_argument('+log-disp-date', action='store_true', help='write date in log entry.')
+
+        subp.add_argument('-log-disp-time', action='store_false', help='NO time in log entry.')
+        subp.add_argument('+log-disp-time', action='store_true', help='write time in log entry.')
+
+        subp.add_argument('-log-disp-fullpath-module', action='store_false', help='write just function name in log entry.')
+        subp.add_argument('+log-disp-fullpath-module', action='store_true', help='write fullpath module in log entry.')
+
+        subp.add_argument('--log-rotation-filesize', action='store_true', help='write fullpath module in log file.')
+        subp.add_argument('--log-rotation-nfiles', type=int, default=0, help='max number of files for rotation.')
         subp.add_argument('--log-modules',
                                     metavar='',
                                     required=False,
@@ -131,37 +144,53 @@ def ParseInput(configFile, color=None):
 
 
     args = parser.parse_args()
-    if args.log_console or args.log_modules:
+    if args.log_console or args.log_modules or args.log_level:
         args.log=True
     # print (args); sys.exit()
 
     # separazione degli args di tipo debug con quelli applicativi
     dbg=argparse.Namespace()
-    dbg=types.SimpleNamespace()
-    dbg.go=args.go                      #;del args.go
-    dbg.display_args=args.display_args  #;del args.display_args
-    dbg.debug=args.debug                #;del args.debug
-    dbg.log=args.log                    #;del args.log
-    dbg.log_console=args.log_console    #;del args.log_console
-    dbg.log_modules=args.log_modules    #;del args.log_modules
-    # dbg.action=args.action              #;del args.action
+    log=argparse.Namespace()
+    '''
+    il processo che segue è per evitare:
+       RuntimeError: dictionary changed size during iteration
+    '''
+    keys=list(args.__dict__.keys())
+    _dargs=args.__dict__
+    for key in keys:
+        val=getattr(args, key)
+        if key in ['log']:
+            setattr(log, key, val)
+        elif key.startswith('log_'):
+            setattr(log, key[4:], val)
+        elif key in ['go', 'debug']:
+            setattr(dbg, key, val)
+        else:
+            continue
+
+        delattr(args, key)
 
     if args.action=='config':
+        # copia la section del file di configurazione
         app=argparse.Namespace(**configFile[args.section])
     else:
+        # copia tutti gli args rimasti
         app=args
 
     app.action=args.action
 
 
     if args.display_args:
+        del args.display_args
         import json
         json_data = json.dumps(vars(app), indent=4, sort_keys=True)
         print('application arguments: {json_data}'.format(**locals()))
+        json_data = json.dumps(vars(log), indent=4, sort_keys=True)
+        print('logging arguments: {json_data}'.format(**locals()))
         json_data = json.dumps(vars(dbg), indent=4, sort_keys=True)
-        print('debuggin arguments: {json_data}'.format(**locals()))
+        print('debugging arguments: {json_data}'.format(**locals()))
         sys.exit(0)
 
-    return app, dbg
+    return app, log, dbg
 
 

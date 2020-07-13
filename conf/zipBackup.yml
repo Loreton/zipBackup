@@ -7,13 +7,28 @@ VARS:
     myMD5_test: '098f6bcd4621d373cade4e832627b4f6'
     myMD5_ciao: '6e6bc4e49dd477ebc98ef4046c067b5f'
 
-Loreto:
-    root_dir    : /mnt/k/Filu/LnDisk/Loreto
-    target_dir  : /mnt/c/Filu_C/LnDisk/Loreto
-    single_file : false
-    crypt       : false
-    md5         : myMD5 # entry_name  of VARS section
-    sub_dirs    : ["*"]
-    include     : ["**/*"]
-    exclude     : ['sync.ffs_db']
+sections_dirs:
+    Loreto:
+        filename    : null
+        root_dir    : /mnt/k/Filu/LnDisk/Loreto
+        target_dir  : /mnt/c/Filu_C/LnDisk/Loreto
+        single_file : false
+        crypt       : false
+        md5         : ${VARS.myMD5} # entry_name  of VARS section
+        sub_dirs    : ["Curriculuum"]
+        include     : ["**/*"]
+        exclude     : ['sync.ffs_db']
+        sync        : true
+
+
+    Lesla:
+        filename    : null
+        root_dir    : /mnt/k/Filu/LnDisk/Lesla
+        target_dir  : /mnt/c/Filu_C/LnDisk/Lesla
+        single_file : false
+        crypt       : false
+        md5         : ${VARS.myMD5}  # entry_name  of VARS section
+        sub_dirs    : ["*"]
+        include     : ["**/*"]
+        exclude     : ['sync.ffs_db']
 

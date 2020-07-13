@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # updated by ...: Loreto Notarantonio
-# Version ......: 12-07-2020 19.41.55
+# Version ......: 13-07-2020 17.34.30
 #
 
 import sys, os; sys.dont_write_bytecode=True
@@ -20,44 +20,55 @@ myMD5_test='098f6bcd4621d373cade4e832627b4f6'
 myMD5_ciao='6e6bc4e49dd477ebc98ef4046c067b5f'
 
 from Source.ParseInput import ParseInput
+from Source.getPassword import getPassword
 # from Source.ParseInput_prev import ParseInput
 from LnLib.zipClass import LnZipClass
 # from LnLib.ReadConfigurationFile import readConfigFile
 from LnLib.yamlLoader_V2 import loadYamlFile
+from LnLib.yamlLoader_V2 import processYamlData
 from LnLib.LnColor import LnColor; C=LnColor()
+from LnLib.LnLogger import setLogger
 
 import pdb
 if __name__ == '__main__':
     global fEXECUTE, fCRYPT
     prj_name=Path(sys.argv[0]).resolve().parent.stem
-    config=loadYamlFile(f'conf/{prj_name}.yml', fPRINT=False)
-    configVars=config.pop('VARS')
+    config=loadYamlFile(f'conf/{prj_name}.yml', resolve=True, fPRINT=False)
+    args, log, dbg=ParseInput(config['sections_dirs'], color=C)
+
+    if log.log:
+        del log.log
+        # -------------------------------
+        # - Logger Initialitazion
+        # -------------------------------
+        log_file = f'/tmp/{prj_name}.log'
+    else:
+        log_file=None
+        # params=dict(
+        #     log_modules=log.log_modules,
+        #     fullpath_module=log.disp_fullpath_module
+        #     )
+
+        # xx=vars(log)
     # pdb.set_trace()
-    # sections=list(config)
-    # sections.remove('VARS')
-    args, dbg=ParseInput(config, color=C)
+    lnLogger = setLogger(filename=log_file, **(log.__dict__))
+
+    lnLogger.debug3('input   arguments', vars(args))
+    lnLogger.debug3('logging arguments', vars(log))
+    lnLogger.debug3('debug   arguments', vars(dbg))
+    lnLogger.debug3('configuration data', config)
+    # -------------------------------
+    # sys.exit()
+
+
     fEXECUTE=dbg.go
-
-    # if dbg.action:
-    #     # pdb.set_trace()
-    #     ns=types.SimpleNamespace(**config[inpArgs.config_section])
-    #     crypt=ns.crypt; delattr(ns, 'crypt')
-    #     md5=ns.md5; delattr(ns, 'md5')
-    # else:
-    #     ns=types.SimpleNamespace()
-    #     ns.root_dir=inpArgs.root_dir
-    #     ns.target_dir=inpArgs.target_dir
-    #     ns.single_file=inpArgs.single_file
-    #     ns.sub_dirs=inpArgs.sub_dirs
-    #     ns.include=inpArgs.include
-    #     ns.exclude=inpArgs.exclude
-
-
-
     fCRYPT=args.crypt
 
     if fCRYPT:
-        getPassword()
+        secret_password=getPassword(args.md5)
+    else:
+        secret_password=None
+
 
     root_dir=Path(args.root_dir)
     if fEXECUTE:
@@ -65,10 +76,11 @@ if __name__ == '__main__':
     else:
         target_dir=tempfile.gettempdir()
 
+    # pdb.set_trace()
     if args.filename:
         dir_name=root_dir.stem
         zip_name=Path(f'{target_dir}/{dir_name}.zip')
-        myZip=LnZipClass(zip_name, mode='w', secret_password=secret_password)
+        myZip=LnZipClass(zip_name, mode='w', fSYNC=args.sync, secret_password=secret_password, logger=lnLogger)
         myZip.addFolder(
                     root_dir,
                     dir_name,
@@ -81,6 +93,9 @@ if __name__ == '__main__':
                     root_dir,
                     target_dir,
                     sub_dirs=args.sub_dirs,
+                    secret_password=secret_password,
                     include=args.include,
-                    exclude=args.exclude)
+                    exclude=args.exclude,
+                    fSYNC=args.sync,
+                    logger=lnLogger)
 

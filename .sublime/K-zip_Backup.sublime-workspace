@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"arc",
+				"archive_name"
+			],
+			[
+				"get",
+				"getPassword"
+			],
+			[
+				"gt",
+				"getPassword"
+			],
+			[
+				"set",
+				"setattr〔function〕"
+			],
+			[
+				"config",
+				"configFile"
+			],
+			[
 				"inp",
 				"inpArgs〔variable〕"
 			],
@@ -30,10 +50,6 @@
 			[
 				"file",
 				"filename"
-			],
-			[
-				"get",
-				"getColored"
 			],
 			[
 				"sub",
@@ -408,10 +424,6 @@
 				"device_list〔argument〕"
 			],
 			[
-				"config",
-				"config_dev〔variable〕"
-			],
-			[
 				"confi",
 				"config_dev〔variable〕"
 			],
@@ -464,10 +476,6 @@
 				"fEXECUTE"
 			],
 			[
-				"set",
-				"setLogger"
-			],
-			[
 				"Ln",
 				"LnLogger"
 			],
@@ -506,14 +514,6 @@
 			[
 				"contetn",
 				"content_word"
-			],
-			[
-				"_word",
-				"_word2〔variable〕"
-			],
-			[
-				"recor",
-				"records〔variable〕"
 			]
 		]
 	},
@@ -523,7 +523,34 @@
 			"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/__main__.py",
 			"settings":
 			{
-				"buffer_size": 2359,
+				"buffer_size": 3030,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/conf/zipBackup.yml",
+			"settings":
+			{
+				"buffer_size": 1095,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/zipClass.py",
+			"settings":
+			{
+				"buffer_size": 8874,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/LnLogger.py",
+			"settings":
+			{
+				"buffer_size": 12593,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,36 +559,7 @@
 			"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/Source/ParseInput.py",
 			"settings":
 			{
-				"buffer_size": 3089,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/conf/zipBackup.yml",
-			"settings":
-			{
-				"buffer_size": 615,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/K/Filu/LnDisk/GIT-REPO/Python/LnStartProgram/Source/Utils/LnYamlLoader.py",
-			"settings":
-			{
-				"buffer_size": 11179,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "#!/usr/bin/python\n# -*- coding: utf-8 -*-\n#\n# updated by ...: Loreto Notarantonio\n# Version ......: 11-07-2020 12.36.45\n#\n\nimport sys; sys.dont_write_bytecode=True\nimport os\nimport types  # per SimpleNamespace\nimport pdb\nfrom   pathlib import Path # https://docs.python.org/3/library/pathlib.html\nimport zipfile # https://docs.python.org/3.6/library/zipfile.html\nimport pyzipper # https://pypi.org/project/pyzipper/\nimport shutil # https://docs.python.org/3/library/shutil.html\nimport datetime\n\n\nclass nullLogger():\n    def dummy(self,  title, *args, **kwargs): pass\n    critical=error=warning=info=debug1=debug2=debug3=dummy\n\n# from LnLib.LnColor import LnColor; C=LnColor()\n# https://gist.github.com/msunardi/6527ac4c3b08975d30f83cd8aa80e147\n# https://pymotw.com/2/zipfile/\n\nclass LnZipClass:\n    '''\n    Open a ZIP file,\n        where file can be:\n           - a path to a file (a string),\n           - a file-like object\n           - a path-like object\n    The mode parameter should be:\n        'r' to read an existing file,\n        'w' to truncate and write a new file,\n        'a' to append to an existing file, or\n        'x' to exclusively create and write a new file.\n    If mode is 'x' and file refers to an existing file, a FileExistsError will be raised.\n    If mode is 'a' and file refers to an existing ZIP file, then additional files are added to it.\n    '''\n\n    def __init__(self, filename, mode, secret_password=None, compression=zipfile.ZIP_STORED, logger=None):\n\n        self.logger=logger if logger else nullLogger()\n        self._zf=None\n        self._secret_password=secret_password\n\n        try:\n            import zlib\n            self._compression = zipfile.ZIP_DEFLATED # compression_type=8\n        except:\n            self._compression = zipfile.ZIP_STORED # compression_type=0\n\n        self._mode=mode\n        self.open(filename, mode)\n\n\n\n\n\n\n    def open(self, filename, mode):\n        self.close()\n        self._filename=filename\n        # filename=Path(filename)\n        if filename:\n            if self._secret_password:\n                self._zf=pyzipper.AESZipFile(filename, mode=mode,\n                             compression=pyzipper.ZIP_LZMA)\n                self._zf.setpassword(secret_password)\n                self._zf.setencryption(pyzipper.WZ_AES, nbits=256)\n            else:\n                self._zf=zipfile.ZipFile(filename, mode=mode, compression=self._compression)\n\n\n    def is_zipfile(self, filename):\n        return zipfile.is_zipfile(filename)\n\n    def print_info(self):\n        for info in self._zf.infolist():\n            print(info.filename)\n            print('\\tcompress_type:\\t', info.compress_type)\n            print('\\tModified:\\t', datetime.datetime(*info.date_time))\n            print('\\tSystem:\\t\\t', info.create_system, '(0 = Windows, 3 = Unix)')\n            print('\\tZIP version:\\t', info.create_version)\n            print('\\tCompressed:\\t', info.compress_size, 'bytes')\n            print('\\tUncompressed:\\t', info.file_size, 'bytes')\n            print('\\tComment:\\t', info.comment)\n            print()\n            # print(info)\n\n        print()\n        for name in self._zf.namelist():\n            print('     ', name)\n        print()\n\n    @property\n    def filename(self):\n        return self._filename\n\n    def close(self):\n        if self._zf:\n            self._zf.close()\n            print(f'file: {self._filename} has been closed')\n\n    '''\n        zip_ns=types.SimpleNamespace()\n        zip_ns.root_dir='/mnt/k/Filu/LnDisk/Loreto'\n        zip_ns.include=['**/*']\n        zip_ns.exclude=['2015', 'sync.ffs_db']\n        zip_ns.compression_type=None\n\n        '*' solo dirs\n        '*/*' solo files\n        '**/*' tutto\n    '''\n    # def oneZipPerFolder(self, root_dir, include=['**/*'], exclude=[], compression_type=None):\n    #     req_compression=compression_type if compression_type else self._compression\n    #     root_dir = Path(root_dir)\n    #     # sub_directory di livello 1\n    #     dirs = [e for e in root_dir.iterdir() if e.is_dir()]\n    #     files = [e for e in root_dir.iterdir() if e.is_file()]\n    #     for _dir in sorted(dirs):\n    #         dir_name=_dir.stem\n    #         if dir_name.lower() in ['curriculuum']: return\n    #         self.addFolder(root_dir, dir_name, include=include, exclude=exclude, req_compression=req_compression)\n\n    def addFolder(self, root_dir, dir_name, include=['**/*'], exclude=[], compression=None, fVERBOSE=0):\n        compression=compression if compression else self._compression\n        my_dir=Path(root_dir / dir_name)\n        print(my_dir)\n        my_list=[]\n        for pattern in include:\n            _list = list(my_dir.glob(pattern))\n            my_list.extend(_list)\n\n        # remove duplicates ... anche list( dict.fromkeys(_val)\n        # my_list=list( dict.fromkeys(my_list) )\n        my_list=list(set(my_list))\n        if exclude:\n            for path in my_list[:]:\n                for ecl_pattern in exclude:\n                    if ecl_pattern in str(path): # anche path.stem\n                        my_list.remove(path)\n\n\n        for file in my_list:\n            archive_name=file.relative_to(root_dir)\n            if fVERBOSE>0: print (archive_name)\n            this_compression=zipfile.ZIP_STORED if file.suffix.lower() in ['.jpg', '.zip', '.xdocx'] else compression\n            self._zf.write(file, arcname=archive_name, compress_type=this_compression)\n            if fVERBOSE>1:\n                if file.is_file() and file.stat().st_size:\n                    info=self._zf.getinfo(str(archive_name))\n                    percent=1-(info.compress_size/info.file_size)\n                    print(f'                - comp_type: {info.compress_type}')\n                    print(f'                - comp_rate: {abs(percent):2.0%}')\n            # print(info)\n            # print('\\tcompress_type:\\t', info.compress_type)\n            # print('\\tModified:\\t', datetime.datetime(*info.date_time))\n            # print('\\tSystem:\\t\\t', info.create_system, '(0 = Windows, 3 = Unix)')\n            # print('\\tZIP version:\\t', info.create_version)\n            # print('\\tCompressed:\\t', info.compress_size, 'bytes')\n            # print('\\tUncompressed:\\t', info.file_size, 'bytes')\n            # print('\\tComment:\\t', info.comment)\n            # print()\n\n        return\n\n    @staticmethod\n    def oneZipPerFolder(root_dir, target_dir, sub_dirs=[], include=['**/*'], exclude=[], secret_password=None, execute=False):\n\n\n        if not sub_dirs or '*' in sub_dirs:\n            sub_dirs = [e.stem for e in root_dir.iterdir() if e.is_dir()]\n            files = [e for e in root_dir.iterdir() if e.is_file()]\n        else:\n            files=[]\n\n        # pdb.set_trace()\n        for dir_name in sorted(sub_dirs):\n            _target_dir=Path(f'{target_dir}/{root_dir.stem}')\n            _target_dir.mkdir(parents=False, exist_ok=True)\n\n            zip_name=Path(f'{_target_dir}/{dir_name}.zip')\n            myZip=LnZipClass(zip_name, mode='w', secret_password=secret_password)\n            myZip.addFolder(root_dir, dir_name, include=include, exclude=exclude)\n            myZip.close()\n            # print(f'file: {myZip.filename} has been closed')\n\n\n\nif __name__ == '__main__':\n\n    root_dir='/mnt/k/Filu/LnDisk/Loreto'\n    secret_password=b'ciao'\n    secret_password=None\n    root_dir=Path('/mnt/k/Filu/LnDisk/Lesla')\n    target_dir='/mnt/k/temp'\n\n    sub_dirs = ['Loreto', 'Lesla']\n    sub_dirs = []\n    LnZipClass.oneZipPerFolder(root_dir, target_dir, sub_dirs=sub_dirs, include=['**/*'], exclude=[])\n\n\n\n\n\n\n    # zipFile     = '/mnt/k/temp/test_001.zip'\n    # myZip = LnZipClass(zipFile, mode='w', secret_password=secret_password)\n    # zip_ns=types.SimpleNamespace()\n    # zip_ns.root_dir='/mnt/k/Filu/LnDisk/Loreto'\n    # zip_ns.include=['**/*']\n    # zip_ns.exclude=['2015', 'sync.ffs_db']\n    # zip_ns.compression_type=None\n\n    # myZip.oneZipPerFolder(root_dir=source_dir, include=['**/*'], exclude=['2015', 'sync.ffs_db'])\n    # myZip.oneZipPerFolder(zip_ns)\n    # myZip.addFolder(source_dir, include=['**/*'], exclude=['2015', 'sync.ffs_db'])\n    # myZip.print_info()\n    # myZip.close()\n\n\n    # crypting\n    # cryptFile='/mnt/k/temp/test_001_crypt.zip'\n    # myZip = LnZipClass(cryptFile, mode='w', secret_password=b'ciao')\n    # myZip.addFolder(source_dir, include=['**/*'], exclude=['2015', 'sync.ffs_db'])\n    # myZip.addFolder(source_dir, include=['*', '*/*', '**/*'], exclude=[])\n    # myZip.addFolder('/mnt/k/Filu/LnDisk/Loreto', exclude=['sync.ffs_db'])\n    # myZip.addFolder('/mnt/k/Filu/LnDisk/Lesla', exclude=['sync.ffs_db'])\n    # myZip.addFolder('l:/Loreto/ProjectsAppl/_Python/LnFunctions_OldStyle', include=['initLog.py'])\n    # myZip.print_info()\n    # myZip.close()\n\n",
-			"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/zipClass.py",
-			"file_size": 8704,
-			"file_write_time": 132389374059096792,
-			"settings":
-			{
-				"buffer_size": 8709,
+				"buffer_size": 7887,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -579,6 +577,10 @@
 		"selected_items":
 		[
 			[
+				"du",
+				"File: Duplicate"
+			],
+			[
 				"dupl",
 				"File: Duplicate"
 			],
@@ -589,10 +591,6 @@
 			[
 				"ren",
 				"File: Rename"
-			],
-			[
-				"du",
-				"File: Duplicate"
 			],
 			[
 				"clip",
@@ -874,21 +872,27 @@
 	],
 	"file_history":
 	[
+		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/yamlLoader_V2.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/LnLogger.py",
 		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/Source/ParseInput.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/conf/zipBackup.yml",
+		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/Source/getPassword.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/zipClass.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnStartProgram/Source/Utils/LnYamlLoader.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnLib/yamlLoaderLn/LnYamlLoader.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnLib/yamlLoaderLn/yamlLoader_V2.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/LnLib/parseInputLn/ParseInput_Color-subparser_V05.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/Source/ParseInput_prev.py",
+		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/LnColor.py",
 		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/loadYaml.py",
 		"/K/Filu/LnDisk/GIT-REPO/Python/LnLib/yamlLoaderLn/LnYamlLoader_V2.py",
 		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/ReadConfigurationFile.py",
-		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/conf/zipBackup.yml",
 		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/__main__.py",
 		"/K/Filu/LnDisk/GIT-REPO/Python/LnStartProgram/conf/LnStartProgram.yml",
-		"/K/Filu/LnDisk/GIT-REPO/Python/LnLib/yamlLoaderLn/LnYamlLoader.py",
 		"/K/Filu/LnDisk/GIT-REPO/Python/LnLib/pyUtils/ReadConfigurationFile.py",
-		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/Source/getPassword.py",
 		"/K/Filu/LnDisk/LnFree/Editors/SublimeText_3/Data/Packages/User/sftp_servers/wsl_2222.json",
 		"/K/Filu/LnDisk/LnFree/Editors/SublimeText_3/Data/Packages/User/sftp_servers/LnPi23_51022.json",
 		"/K/Filu/LnDisk/GIT-REPO/sublime_sftp_wsl",
-		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/zipClass.py",
-		"/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/LnColor.py",
 		"/K/Filu/LnDisk/GIT-REPO/gitUtils/RepositoryStatus.yml",
 		"/K/Filu/LnDisk/GIT-REPO/gitUtils/.git/config",
 		"/K/Filu/LnDisk/GIT-REPO/gitUtils/lcommit",
@@ -995,13 +999,7 @@
 		"/K/Filu/LnDisk/GIT-REPO/LnDOC/.git/config",
 		"/K/Filu/LnDisk/GIT-REPO/@LnDOC/.git/config",
 		"/C/Users/Loreto/AppData/Local/Temp/scp35432/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/lcommit",
-		"/C/Users/Loreto/AppData/Local/Temp/scp37349/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/.git/config",
-		"/C/Users/Loreto/AppData/Local/Temp/scp34709/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/RepositoryStatus.txt",
-		"/C/Users/Loreto/AppData/Local/Temp/scp38167/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/.git/config",
-		"/C/Users/Loreto/AppData/Local/Temp/scp47742/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnMail/Mail_Parametrizzata.py",
-		"/C/Users/Loreto/AppData/Local/Temp/scp47331/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/LnPythonLib/LnMail/sample_attached.txt",
-		"/C/Users/Loreto/AppData/Local/Temp/scp39730/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/Python/PyMount/.git/config",
-		"/C/Users/Loreto/AppData/Local/Temp/scp48000/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/LnReadMe.txt"
+		"/C/Users/Loreto/AppData/Local/Temp/scp37349/HOME-LnPi31B-LnPi31B-192.168.1.31/home/pi/GIT-REPO/gitUtils/.git/config"
 	],
 	"find":
 	{
@@ -1016,9 +1014,51 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"addFolder",
+			"fSYNC",
+			"sync",
+			"syncfSYNC",
+			"getInfo",
+			"fileExists",
+			"getinfo",
+			"                info=self._zf.getinfo(str(archive_name))\n",
+			"getinfo",
+			"this_compression",
+			"} ",
+			"self.logger",
+			"{TAB",
+			"TAB",
+			"self.logger",
+			"PosixPath",
+			"addFolder",
+			"execute",
+			"yaml.load",
+			"yaml",
+			"self.log.numlevel",
+			"self.logg.",
+			"logg",
+			"myLogger",
+			"time",
+			"log.date",
+			"date",
+			"fVERBOSE",
+			"FullLoader",
+			"load",
+			"already_read_files",
+			"types",
+			"SimpleNamespace",
+			"config_sections",
+			"sections",
+			"green(",
+			"c_green",
+			"c_yellow",
+			"getColored",
+			"Color",
+			"color",
+			"Color",
 			"delete",
 			"_this_file_path",
 			"_this_path",
@@ -1104,49 +1144,7 @@
 			"_primary_IP",
 			"getDefaultGW",
 			"comment",
-			"getReqDirPath",
-			"found_dir",
-			"checkInput",
-			"getReqDirPath",
-			"exit",
-			"getReqDirPath",
-			"self._alias",
-			"{self._alias}",
-			"len(",
-			"len",
-			"getInterfaceIpAddr",
-			"exec_Command",
-			"shellRun",
-			"exec_Command",
-			"getInterfaceIpAddr",
-			"nullLogger",
-			"LnPathCopy",
-			"LnPathRotate",
-			"LnClass",
-			"LnPathRotate",
-			"copy",
-			"LnPathRotate",
-			"set_level",
-			"self._console",
-			"CONSOLE",
-			"my_tunnel_",
-			"my_tun",
-			"setAlias",
-			"self.logger",
-			"self._alias",
-			"getDefaultGW",
-			"set_trace()",
-			"splitText",
-			"getDefaultGW",
-			"ip route",
-			"internalIpAddress",
-			"default_ip_address",
-			"_I_am_local",
-			"default_ip_address",
-			"get_default_ip_address",
-			"getInterfaceIpAddr",
-			"internalIpAddress",
-			"_primary_IP"
+			"getReqDirPath"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1164,7 +1162,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1173,15 +1171,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2359,
+						"buffer_size": 3030,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1446,
-								1446
+								2412,
+								2412
 							]
 						],
 						"settings":
@@ -1193,12 +1191,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										2472,
+										2473
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										2386,
+										2387
+									]
 								},
 								"unmatched":
 								{
@@ -1211,41 +1224,16 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1256,18 +1244,43 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
 							],
-							"function_name_status_row": 51,
+							"function_name_status_row": 82,
 							"incomplete_sync": null,
 							"origPos":
 							[
 								0.0,
-								600.0
+								1440.0
 							],
 							"remote_loading": false,
 							"syncScroll": false,
@@ -1277,142 +1290,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 840.0,
+						"translation.y": 1440.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/Source/ParseInput.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3089,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"function_name_status_row": 0,
-							"incomplete_sync": null,
-							"origPos":
-							[
-								0.0,
-								0.0
-							],
-							"remote_loading": false,
-							"syncScroll": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1020.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/conf/zipBackup.yml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 615,
+						"buffer_size": 1095,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								552,
-								552
+								733,
+								737
 							]
 						],
 						"settings":
@@ -1423,27 +1321,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										551,
-										552
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/square_bracket.png",
-										"region.bluish"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										547,
-										548
-									]
 								},
 								"unmatched":
 								{
@@ -1456,41 +1339,16 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1501,18 +1359,43 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
 							],
-							"function_name_status_row": 15,
+							"function_name_status_row": 20,
 							"incomplete_sync": null,
 							"origPos":
 							[
 								0.0,
-								0.0
+								120.0
 							],
 							"remote_loading": false,
 							"syncScroll": false,
@@ -1522,143 +1405,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 120.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/K/Filu/LnDisk/GIT-REPO/Python/LnStartProgram/Source/Utils/LnYamlLoader.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11179,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1712,
-								1712
-							]
-						],
-						"settings":
-						{
-							"apply_syntax_touched": true,
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"function_name_status_row": 65,
-							"incomplete_sync": null,
-							"origPos":
-							[
-								0.0,
-								575.0
-							],
-							"remote_loading": false,
-							"syncScroll": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2255.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/zipClass.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8709,
+						"buffer_size": 8874,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4777,
-								4807
+								6864,
+								6864
 							]
 						],
 						"settings":
@@ -1670,12 +1437,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										6864,
+										6865
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										6854,
+										6855
+									]
 								},
 								"unmatched":
 								{
@@ -1688,41 +1470,16 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1733,18 +1490,43 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
 							],
-							"function_name_status_row": 138,
+							"function_name_status_row": 182,
 							"incomplete_sync": null,
 							"origPos":
 							[
 								0.0,
-								2468.0
+								3200.0
 							],
 							"remote_loading": false,
 							"syncScroll": false,
@@ -1755,7 +1537,239 @@
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2468.0,
+						"translation.y": 3320.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/LnLib/LnLogger.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12593,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9246,
+								9246
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"function_name_status_row": 291,
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								6087.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6087.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/K/Filu/LnDisk/GIT-REPO/Python/zipBackup/Source/ParseInput.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6409,
+								6409
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"function_name_status_row": 146,
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								2760.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2760.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
