@@ -18,7 +18,7 @@ sections_dirs:
         sub_dirs    : ["Curriculuum"]
         include     : ["**/*"]
         exclude     : ['sync.ffs_db']
-        sync        : true
+        update      : false
 
 
     Lesla:

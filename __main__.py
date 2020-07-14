@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # updated by ...: Loreto Notarantonio
-# Version ......: 13-07-2020 17.34.30
+# Version ......: 14-07-2020 17.02.24
 #
 
 import sys, os; sys.dont_write_bytecode=True
@@ -28,6 +28,7 @@ from LnLib.yamlLoader_V2 import loadYamlFile
 from LnLib.yamlLoader_V2 import processYamlData
 from LnLib.LnColor import LnColor; C=LnColor()
 from LnLib.LnLogger import setLogger
+from LnLib import LnPathMonkeyFunctions
 
 import pdb
 if __name__ == '__main__':
@@ -60,7 +61,7 @@ if __name__ == '__main__':
     # -------------------------------
     # sys.exit()
 
-
+    LnPathMonkeyFunctions.LnMonkeySet(lnLogger)
     fEXECUTE=dbg.go
     fCRYPT=args.crypt
 
@@ -80,7 +81,7 @@ if __name__ == '__main__':
     if args.filename:
         dir_name=root_dir.stem
         zip_name=Path(f'{target_dir}/{dir_name}.zip')
-        myZip=LnZipClass(zip_name, mode='w', fSYNC=args.sync, secret_password=secret_password, logger=lnLogger)
+        myZip=LnZipClass(zip_name, mode='w', fUPDATE=args.update, secret_password=secret_password, logger=lnLogger)
         myZip.addFolder(
                     root_dir,
                     dir_name,
@@ -96,6 +97,6 @@ if __name__ == '__main__':
                     secret_password=secret_password,
                     include=args.include,
                     exclude=args.exclude,
-                    fSYNC=args.sync,
+                    fUPDATE=args.update,
                     logger=lnLogger)
 
