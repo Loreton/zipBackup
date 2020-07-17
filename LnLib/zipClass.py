@@ -1,1 +1,1 @@
-../../../Python/LnLib/zipClass/zipClass.py
+../../../Python/lnLib/zipClassLn/zipClass.py

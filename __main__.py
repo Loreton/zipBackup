@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # updated by ...: Loreto Notarantonio
-# Version ......: 14-07-2020 17.02.24
+# Version ......: 17-07-2020 08.11.24
 #
 
 import sys, os; sys.dont_write_bytecode=True
@@ -21,11 +21,8 @@ myMD5_ciao='6e6bc4e49dd477ebc98ef4046c067b5f'
 
 from Source.ParseInput import ParseInput
 from Source.getPassword import getPassword
-# from Source.ParseInput_prev import ParseInput
 from LnLib.zipClass import LnZipClass
-# from LnLib.ReadConfigurationFile import readConfigFile
-from LnLib.yamlLoader_V2 import loadYamlFile
-from LnLib.yamlLoader_V2 import processYamlData
+from LnLib.yamlLoader import loadYamlFile
 from LnLib.LnColor import LnColor; C=LnColor()
 from LnLib.LnLogger import setLogger
 from LnLib import LnPathMonkeyFunctions
@@ -39,19 +36,9 @@ if __name__ == '__main__':
 
     if log.log:
         del log.log
-        # -------------------------------
-        # - Logger Initialitazion
-        # -------------------------------
         log_file = f'/tmp/{prj_name}.log'
     else:
         log_file=None
-        # params=dict(
-        #     log_modules=log.log_modules,
-        #     fullpath_module=log.disp_fullpath_module
-        #     )
-
-        # xx=vars(log)
-    # pdb.set_trace()
     lnLogger = setLogger(filename=log_file, **(log.__dict__))
 
     lnLogger.debug3('input   arguments', vars(args))
@@ -61,7 +48,7 @@ if __name__ == '__main__':
     # -------------------------------
     # sys.exit()
 
-    LnPathMonkeyFunctions.LnMonkeySet(lnLogger)
+    LnPathMonkeyFunctions.setLoggerLn(lnLogger)
     fEXECUTE=dbg.go
     fCRYPT=args.crypt
 
