@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # updated by ...: Loreto Notarantonio
-# Version ......: 13-07-2020 15.24.27
+# Version ......: 19-07-2020 12.34.54
 #
 
 # https://pymotw.com/3/argparse # molto interessante
@@ -37,10 +37,10 @@ def common_options(subparsers):
 
         # --- common
 
-        # subp.add_argument('--crypt',        action='store_true', help='specify if zip file must be crypted.')
         subp.add_argument('--go', action='store_true', help='load data. default is --dry-run')
         subp.add_argument('--display-args', action='store_true', help='Display input paramenters')
         subp.add_argument('--debug', action='store_true', help='display paths and input args')
+
         subp.add_argument('--log', action='store_true', help='Activate log.')
         subp.add_argument('--log-level', type=str, default='info', choices=['critical','error','warning','info','debug1','debug2','debug3'], help='specify log level.')
         subp.add_argument('--log-console', action='store_true', help='Activate log and write to console too.')
@@ -112,6 +112,8 @@ def ParseInput(configFile, color=None):
         help="arguments will be taken from configuration file section")
     config_parser.add_argument('--section', required=False, choices=configFile.keys(), default=None, metavar='',
         help=f'Section of configuration file {list(configFile.keys())}'+ cyanH(''))
+    config_parser.add_argument('--crypt',  action='store_true', help='specify if zip file must be crypted.')
+    config_parser.add_argument('--update', action='store_true', help='Update current file.')
 
 
     # - manually input  parser

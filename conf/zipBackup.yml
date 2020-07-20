@@ -12,21 +12,23 @@ sections_dirs:
         filename    : null
         root_dir    : /mnt/k/Filu/LnDisk/Loreto
         target_dir  : /mnt/c/Filu_C/LnDisk/Loreto
+        backup_dir  : /mnt/c/Filu_C/LnDisk/Loreto_Backup
         single_file : false
-        crypt       : false
+        crypt       : true
         md5         : ${VARS.myMD5} # entry_name  of VARS section
-        sub_dirs    : ["Curriculuum"]
+        # sub_dirs    : ["Curriculuum", 'Avatar', "BdI"]
+        sub_dirs    : ["*"]
         include     : ["**/*"]
         exclude     : ['sync.ffs_db']
-        update      : false
 
 
     Lesla:
         filename    : null
         root_dir    : /mnt/k/Filu/LnDisk/Lesla
         target_dir  : /mnt/c/Filu_C/LnDisk/Lesla
+        backup_dir  : /mnt/c/Filu_C/LnDisk/Lesla_Backup
         single_file : false
-        crypt       : false
+        crypt       : true
         md5         : ${VARS.myMD5}  # entry_name  of VARS section
         sub_dirs    : ["*"]
         include     : ["**/*"]

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # updated by ...: Loreto Notarantonio
-# Version ......: 17-07-2020 08.11.24
+# Version ......: 19-07-2020 12.08.09
 #
 
 import sys, os; sys.dont_write_bytecode=True
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     if args.filename:
         dir_name=root_dir.stem
         zip_name=Path(f'{target_dir}/{dir_name}.zip')
-        myZip=LnZipClass(zip_name, mode='w', fUPDATE=args.update, secret_password=secret_password, logger=lnLogger)
+        myZip=LnZipClass(zip_name, mode='w', secret_password=secret_password, logger=lnLogger, execute=dbg.go)
         myZip.addFolder(
                     root_dir,
                     dir_name,
@@ -80,10 +80,11 @@ if __name__ == '__main__':
         LnZipClass.oneZipPerFolder(
                     root_dir,
                     target_dir,
+                    backup_dir=args.backup_dir,
                     sub_dirs=args.sub_dirs,
                     secret_password=secret_password,
                     include=args.include,
                     exclude=args.exclude,
-                    fUPDATE=args.update,
+                    execute=dbg.go,
                     logger=lnLogger)
 
